@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall of Fame</title>
+    <style>
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+    background: #000;
+    color: #b0b0b0;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0; /* Updated margin */
+    color: red;
+}
+
+.container {
+    width: 80%;
+    margin: 15px auto; /* Updated margin */
+}
+
+/* Navbar Styling */
+nav {
+    background: #1a1a1a;
+    color: #b0b0b0;
+    padding: 10px; /* Updated padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #5c0000; /* Change back if needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 8px 12px; /* Updated padding */
+    display: block;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px; /* Updated font size */
+}
+
+nav ul li a:hover {
+    background: #5c0000; /* Change back if needed */
+    color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px red; /* Change back if needed */
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    padding: 5px 0; /* Updated padding */
+    display: none;
+    border-radius: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 0;
+    min-width: 130px; /* Updated min-width */
+}
+
+nav ul li ul li a {
+    padding: 8px; /* Updated padding */
+    text-align: left;
+    border-radius: 0;
+}
+
+nav ul li ul li a:hover {
+    background: #5c0000;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0; /* Updated padding */
+    background: #1a1a1a;
+    margin: 20px 0; /* Updated margin */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+        .medals {
+            width: 750px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ranks.html">Ranks</a></li>
+            <li><a href="top10.html">Top 10</a></li>
+            <li><a href="wof.html">Wall of Fame</a></li>
+            <li>
+                <a href="about.html">About</a>
+                <!-- Dropdown Menu -->
+                <ul>
+                    <li><a href="https://www.youtube.com/@reverseyourstuttering" target="_blank">Youtube Channel</a></li>
+                    <li><a href="https://www.youtube.com/@stutteringempire" target="_blank">Youtube Channel 2nd</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Wall of Fame Content -->
+    <section>
+        <h2>The Wall of Fame is for distinguished long-term members who have earned a minimum of 12 medals.</h2>
+        <img class="medals" src="Gallery images/Medals.png">
+        <h3><pre>Inductees:
+
+Demented, Book, Ndog, Yellow Submarine, RJ, Furqan, Craig Coffee, Lucidarior, Radius, Puppy, Ibz, Dragon
+        </pre></h3>
+    </section>
+    
+</body>
+</html>

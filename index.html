@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stuttering Empire</title>
+    <!-- Link to Google Fonts for Medieval Style -->
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+    background: #000;
+    color: #b0b0b0;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0; /* Decrease margin */
+    color: red;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Navbar Styling */
+nav {
+    background: #1a1a1a;
+    color: #b0b0b0;
+    padding: 10px; /* Decrease padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #5c0000; /* Change back if needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 8px 12px; /* Decrease padding */
+    display: block;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px; /* Decrease font size */
+}
+
+nav ul li a:hover {
+    background: #5c0000; /* Change back if needed */
+    color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px red; /* Change back if needed */
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    padding: 5px 0; /* Decrease padding */
+    display: none;
+    border-radius: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 0;
+    min-width: 130px; /* Decrease min-width */
+}
+
+nav ul li ul li a {
+    padding: 8px; /* Decrease padding */
+    text-align: left;
+    border-radius: 0;
+}
+
+nav ul li ul li a:hover {
+    background: #5c0000;
+}
+
+/* Days Counter */
+.counter-container {
+    text-align: center;
+    margin: 15px auto; /* Decrease margin */
+    padding: 8px; /* Decrease padding */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    max-width: 500px;
+    font-family: 'MedievalSharp', serif;
+}
+
+.counter {
+    font-size: 30px; /* Decrease font size */
+    color: #b0b0b0;
+    margin: 5px 0;
+}
+
+.counter-text {
+    font-size: 16px; /* Decrease font size */
+    color: #b0b0b0;
+    margin: 5px 0;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0; /* Decrease padding */
+    background: #1a1a1a;
+    margin: 20px 0; /* Decrease margin */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Image gallery */
+.gallery-container {
+    width: 80%;
+    margin: 15px auto; /* Decrease margin */
+    position: relative;
+    max-width: 500px; /* Decrease max-width */
+    height: 250px; /* Decrease height */
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: center; /* Center the gallery content */
+}
+
+.gallery-slide {
+    display: none;
+    width: 100%;
+    height: 100%; /* Ensure slides fill container */
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the container without stretching */
+    border-radius: 15px;
+}
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px; /* Decrease padding */
+    color: white;
+    font-weight: bold;
+    font-size: 20px; /* Decrease font size */
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    background-color: #1a1a1a;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: #5c0000;
+}
+
+
+/* Gallery end*/
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ranks.html">Ranks</a></li>
+            <li><a href="top10.html">Top 10</a></li>
+            <li><a href="wof.html">Wall of Fame</a></li>
+            <li>
+                <a href="about.html">About</a>
+                <!-- Dropdown Menu -->
+                <ul>
+                    <li><a href="https://www.youtube.com/@reverseyourstuttering" target="_blank">Youtube Channel</a></li>
+                    <li><a href="https://www.youtube.com/@stutteringempire" target="_blank">Youtube Channel 2nd</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Days Counter -->
+    <div class="counter-container">
+        <div class="counter" id="daysCounter">0</div>
+        <div class="counter-text">Number of days server has been up</div>
+    </div>
+
+    <!-- Main Content -->
+    <section>
+        <h2>Welcome to The Stuttering Empire!</h2>
+        <p><pre>The best Discord server dedicated towards helping people who stutter. 
+This unique community welcomes anyone with all kinds of interests.
+
+Add "demented.js" on Discord to join us.
+        </pre></p>
+    </section>
+
+<!-- Image Gallery -->
+<div class="gallery-container">
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_1.png" alt="Image 1">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_2.png" alt="Image 2">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_3.png" alt="Image 3">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_4.png" alt="Image 4">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_5.png" alt="Image 5">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_6.png" alt="Image 6">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_8.png" alt="Image 8">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_9.png" alt="Image 9">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_10.png" alt="Image 10">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_11.png" alt="Image 11">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_12.png" alt="Image 12">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_13.png" alt="Image 13">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_14.png" alt="Image 14">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_15.png" alt="Image 15">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_16.png" alt="Image 16">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_17.png" alt="Image 17">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_18.png" alt="Image 18">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_19.png" alt="Image 19">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_20.png" alt="Image 20">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_21.png" alt="Image 21">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_22.png" alt="Image 22">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_25.png" alt="Image 25">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_26.png" alt="Image 26">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_27.png" alt="Image 27">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_28.png" alt="Image 28">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_29.png" alt="Image 29">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_30.png" alt="Image 30">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_31.png" alt="Image 31">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_32.png" alt="Image 32">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_33.png" alt="Image 33">
+    </div>
+    <div class="gallery-slide">
+        <img src="Gallery images/gallery_34.png" alt="Image 34">
+    </div>
+    
+
+    <!-- Arrows -->
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+
+
+
+
+<!-- JavaScript -->
+<!-- Days counter script continued -->
+<script>
+    const startDate = new Date('2022-10-15');
+    const counter = document.getElementById('daysCounter');
+
+    function updateCounter() {
+        const currentDate = new Date();
+        const timeDiff = currentDate - startDate;
+        const daysUp = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        counter.textContent = daysUp;
+    }
+
+    // Update the counter every second (optional, depending on whether you want live updates)
+    setInterval(updateCounter, 1000);
+    updateCounter(); // Run initially to set the counter immediately
+</script>
+
+
+
+<!-- JavaScript for Gallery Slideshow -->
+<script>
+    let slideIndex = 0;
+    let slideInterval;
+    const slides = document.querySelectorAll('.gallery-slide');
+    const totalSlides = slides.length;
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.style.display = 'none'; // Hide all slides
+        });
+        slideIndex++;
+        if (slideIndex > totalSlides) { slideIndex = 1; } // Reset to first slide
+        slides[slideIndex - 1].style.display = 'block'; // Show current slide
+    }
+
+    function startSlideshow() {
+        slideInterval = setInterval(() => {
+            showSlides();
+        }, 2000); // Change image every 2 seconds
+    }
+
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        slideIndex -= 2; // Go back one slide
+        showSlides();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        showSlides();
+    });
+
+    // Initialize the slideshow
+    startSlideshow();
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

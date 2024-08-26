@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+    background: #000;
+    color: #b0b0b0;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0; /* Updated margin */
+    color: red;
+}
+
+.container {
+    width: 80%;
+    margin: 15px auto; /* Updated margin */
+}
+
+/* Navbar Styling */
+nav {
+    background: #1a1a1a;
+    color: #b0b0b0;
+    padding: 10px; /* Updated padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #5c0000; /* Change back if needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 8px 12px; /* Updated padding */
+    display: block;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px; /* Updated font size */
+}
+
+nav ul li a:hover {
+    background: #5c0000; /* Change back if needed */
+    color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px red; /* Change back if needed */
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    padding: 5px 0; /* Updated padding */
+    display: none;
+    border-radius: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 0;
+    min-width: 130px; /* Updated min-width */
+}
+
+nav ul li ul li a {
+    padding: 8px; /* Updated padding */
+    text-align: left;
+    border-radius: 0;
+}
+
+nav ul li ul li a:hover {
+    background: #5c0000;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0; /* Updated padding */
+    background: #1a1a1a;
+    margin: 20px 0; /* Updated margin */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+        /* Styling for Vision Statement */
+        .container {
+            max-width: 800px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0 auto; /* Center within section */
+        }
+        .vision-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        .goal-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 5px solid #e74c3c;
+            background-color: #f9ebea;
+            border-radius: 5px;
+        }
+        .secondary-goal, .tertiary-goal {
+            padding-left: 20px;
+            font-style: italic;
+        }
+        .custom-ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .custom-li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .custom-li:last-child {
+            border-bottom: none;
+        }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #fff;
+            background-color: #5fd490; /* Green background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ranks.html">Ranks</a></li>
+            <li><a href="top10.html">Top 10</a></li>
+            <li><a href="wof.html">Wall of Fame</a></li>
+            <li>
+                <a href="about.html">About</a>
+                <!-- Dropdown Menu -->
+                <ul>
+                    <li><a href="https://www.youtube.com/@reverseyourstuttering" target="_blank">Youtube Channel</a></li>
+                    <li><a href="https://www.youtube.com/@stutteringempire" target="_blank">Youtube Channel 2nd</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- About Content -->
+    <section>
+        <div class="container">
+            <h1>Vision Statement:</h1>
+            <div class="vision-section">
+                <p><strong>Main focus of the server:</strong> to gain as much useful knowledge as possible (no matter the topic)</p>
+            </div>
+            <div class="goal-section">
+                <p><strong>Primary goal of the server:</strong> to then use that knowledge to cure stutterers</p>
+                <p class="secondary-goal"><strong>Secondary goal of the server:</strong> to then use that knowledge to cure people of x anxiety</p>
+                <p class="tertiary-goal"><strong>Tertiary goal of the server:</strong> to collaborate on other topics such as neuroscience, philosophy, gaming, etc.</p>
+            </div>
+            <hr>
+            <br>
+            <div class="disclaimer">
+                <p>Additionally, we make sure that our mission statement does not violate the Discord Terms of Service.</p>
+                <ul class="custom-ul">
+                    We do not provide any sort of medical advice and we respect other people's privacy.
+                </ul>
+                <br>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
